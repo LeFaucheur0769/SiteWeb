@@ -1,7 +1,7 @@
 import { useState } from 'react';
 // import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import MyTimetable from '../timetable_guide';
+import MyTimetable from '../timetable';
 import MyCalendar from './Calendar';
 
 

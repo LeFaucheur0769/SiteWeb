@@ -7,7 +7,7 @@ import LogPage from "./components/authentification/logPage.jsx";
 import Register from "./components/authentification/Register.jsx";
 import Home from "./components/home.jsx";
 import CalendarGuides from "./components/calendarGuides.jsx";
-import Timetable_guide from "./components/timetable_guide.jsx";
+import Timetable_guide from "./components/timetable.jsx";
 
 const App = () => {
 

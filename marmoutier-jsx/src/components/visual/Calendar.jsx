@@ -3,7 +3,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import axios from '../../api/axios';
 import 'react-calendar/dist/Calendar.css';
-import MyTimetable from '../timetable_guide';
+import MyTimetable from '../timetable';
 
 function MyCalendar() {
   const [date, setDate] = useState(new Date());
