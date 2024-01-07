@@ -1,0 +1,11 @@
+{
+  "monday": [
+      {
+        "id": "1",
+        "name": "Date 1 ",
+        "type": "custom",
+        "startTime": "2023-11-23T11:30:00",
+        "endTime": "2023-11-23T15:45:00"
+      }
+  ]
+}

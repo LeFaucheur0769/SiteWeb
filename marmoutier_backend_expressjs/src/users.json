@@ -1,0 +1,17 @@
+[
+  {
+    "username": "admin",
+    "password": "$2b$04$TzuAGKD3UTeXHR0Y8XHZ8ODqYck/J89ae7eqysPqlcAEPseQZTNwW",
+    "role": "admin"
+  },
+  {
+    "username": "admin",
+    "password": "$2b$04$anlnLerz/sup.U6pyqFkrOTXmZT7200zorARmJ07Apk1O986bOfNu",
+    "role": "admin"
+  },
+  {
+    "username": "guide",
+    "password": "$2b$04$WMDllG477d/xbskZhVI3meL7aAm8dXtgKs3bp8f6m1y.Ki5pKc6u.",
+    "role": "guide"
+  }
+]

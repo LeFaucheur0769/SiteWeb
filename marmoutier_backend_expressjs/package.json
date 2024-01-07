@@ -1,0 +1,23 @@
+{
+  "name": "marmoutier_backend_expressjs",
+  "version": "1.0.0",
+  "description": "marmoutier website backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "marmoutier"
+  ],
+  "author": "LeFaucheur0769",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1"
+  }
+}
