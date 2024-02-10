@@ -105,23 +105,26 @@ const MyTimetable = ({ parsedData }) => {
       {loading ? (
         <p>Chargement...</p>
       ) : (
-        <Timetable 
-        events={
-          {
-            Day: [
+        <div>
+          <Timetable 
+          events={
             {
-              id: 1,
-              name: jsonData.name,
-              type: jsonData.type,
-              startTime: new Date(jsonData.startTime),
-              endTime: new Date(jsonData.endTime),
-            },
-          ],
-         }
-        }
-        style={{ height: '500px' }}
-        onClick={(event) => alert(event)}
-      />
+              Day: [
+              {
+                id: 1,
+                name: jsonData.name,
+                type: jsonData.type,
+                startTime: new Date(jsonData.startTime),
+                endTime: new Date(jsonData.endTime),
+              },
+            ],
+          }
+          }
+          style={{ height: '500px' }}
+          onClick={(event) => alert(event)}
+        />
+        <input type="text" />
+      </div>
       )}
     </div>
   );
