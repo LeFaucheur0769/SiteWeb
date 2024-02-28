@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 // import Timetable from 'react-timetable-events';
 import Timetable from 'react-timetable-events';
 import axios from '../api/axios';
+import TimetableInput from './visual/timetable_input';
 
 
 const MyTimetable = ({ parsedData }) => {
@@ -124,11 +125,13 @@ const MyTimetable = ({ parsedData }) => {
           onClick={(event) => alert(event)}
         />
         {/* Utiliser une checkbox pour les horaires a selectionner */}
-        <div  style={{display:'flex'}}>
-          <text> HI</text>
-          <input type="time" name="timetable" pattern="(0[1-9]|1[0-2])h([0-5][0-9])m-(0[1-9]|1[0-2])h([0-5][0-9])m" required style={{marginRight : "200px"}}/>
+        {/* <div  style={{display:'flex'}}>
+          <text style={{marginRight : "5px"}}> Début : </text>
+          <input type="time" name="timetable" pattern="(0[1-9]|1[0-2])h([0-5][0-9])m-(0[1-9]|1[0-2])h([0-5][0-9])m" required style={{marginRight : "100px"}}/>
+          <text style={{marginRight : "5px"}}> Fin : </text>
           <input type="time" name="timetable" pattern="(0[1-9]|1[0-2])h([0-5][0-9])m-(0[1-9]|1[0-2])h([0-5][0-9])m" required />
-        </div>
+        </div> */}
+        <TimetableInput></TimetableInput>
       </div>
       )}
     </div>
