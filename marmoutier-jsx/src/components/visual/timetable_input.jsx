@@ -22,7 +22,7 @@ const TimetableInput = () => {
 
     return (
         <div>
-            <label htmlFor="timetable">Enter Timetable:</label>
+            <label htmlFor="timetable" style={{marginRight : "20px", marginLeft : "20px"}}>Horaires  :</label>
             <input 
                 type="time" 
                 id="timetable"
