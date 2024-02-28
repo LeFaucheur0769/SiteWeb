@@ -125,6 +125,7 @@ const MyTimetable = ({ parsedData }) => {
         />
         {/* Utiliser une checkbox pour les horaires a selectionner */}
         <div  style={{display:'flex'}}>
+          <text> HI</text>
           <input type="time" name="timetable" pattern="(0[1-9]|1[0-2])h([0-5][0-9])m-(0[1-9]|1[0-2])h([0-5][0-9])m" required style={{marginRight : "200px"}}/>
           <input type="time" name="timetable" pattern="(0[1-9]|1[0-2])h([0-5][0-9])m-(0[1-9]|1[0-2])h([0-5][0-9])m" required />
         </div>
