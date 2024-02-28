@@ -6,7 +6,7 @@ const fs = require('fs');
 const bcrypt = require('bcrypt');
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
 // Autoriser l'origine de votre application front-end (http://localhost:5173)
 const allowedOrigins = ['http://localhost:5173', 'http://pics-infected.gl.at.ply.gg:21069', 'http://given-computational.gl.at.ply.gg:21072/', 'http://147.185.221.17:21069', ' https://147.185.221.16:5808'];

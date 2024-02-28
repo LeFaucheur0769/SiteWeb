@@ -123,7 +123,11 @@ const MyTimetable = ({ parsedData }) => {
           style={{ height: '500px' }}
           onClick={(event) => alert(event)}
         />
-        <input type="text" />
+        {/* Utiliser une checkbox pour les horaires a selectionner */}
+        <div  style={{display:'flex'}}>
+          <input type="time" name="timetable" pattern="(0[1-9]|1[0-2])h([0-5][0-9])m-(0[1-9]|1[0-2])h([0-5][0-9])m" required />
+          <input type="time" name="timetable" pattern="(0[1-9]|1[0-2])h([0-5][0-9])m-(0[1-9]|1[0-2])h([0-5][0-9])m" required />
+        </div>
       </div>
       )}
     </div>
