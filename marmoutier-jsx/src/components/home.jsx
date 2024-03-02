@@ -15,16 +15,16 @@ function Home(){
                 transform: "translate(-50%, -50%)",
             }}>
                 <div    style={{
-                    // scale: "80%"
+                    //scale: "80%"
                 }}
                 >
                 <center>
-                    <h1>
+                    {/* <h1>
                         Still working on it
-                    </h1>
+                    </h1> */}
                 </center>
                     <div    style={{
-
+                        scale: "125%"
                     }}>
                         <MyCalendar/>
                     </div>

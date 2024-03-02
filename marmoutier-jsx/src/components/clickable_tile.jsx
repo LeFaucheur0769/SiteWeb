@@ -19,6 +19,7 @@ function CustomCalendar() {
     setSelectedDates(newSelectedDates);
   };
 
+  // Add a tileClassName prop to the Calendar component
   const tileClassName = ({ date }) => {
     if (selectedDates.has(date.toDateString())) {
       return 'selected-date';
@@ -26,6 +27,7 @@ function CustomCalendar() {
     return null;
   };
 
+  // Load selected dates from the server
   const loadSelectedDatesFromServer = () => {
     // Request selected dates from the server
     axios.get(CALENDAR_URL)
@@ -43,7 +45,8 @@ function CustomCalendar() {
     // Load selected dates from the server initially
     loadSelectedDatesFromServer();
   }, []);
-
+  
+  // Send selected dates to the server
   const sendSelectedDatesToServer = async () => {
     try {
       const response = await axios.post(ADMIN_CALENDAR_URL, {

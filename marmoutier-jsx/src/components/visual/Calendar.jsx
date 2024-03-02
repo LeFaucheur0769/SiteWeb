@@ -30,6 +30,8 @@ function MyCalendar() {
     setSelectedDateIsGreen(selectedDates.has(newDate.toDateString()));
   };
 
+  // This code defines a function called toggleView that toggles the value of showCalendar. If showCalendar is true, it will be set to false, and vice versa.
+  // It is used to toggle between showing the calendar and showing the timetable if the selectedDateIsGreen is true.
   const toggleView = () => {
     setShowCalendar(!showCalendar);
   };
@@ -43,7 +45,7 @@ function MyCalendar() {
 
   return (
     <div style={{
-      height: '70%',
+      height: '100%',
     }}>
       {showCalendar ? (
         <div>
