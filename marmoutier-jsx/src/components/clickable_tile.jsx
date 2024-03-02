@@ -22,7 +22,7 @@ function CustomCalendar() {
   // Add a tileClassName prop to the Calendar component
   const tileClassName = ({ date }) => {
     if (selectedDates.has(date.toDateString())) {
-      return 'selected-date';
+      return 'clicked-date'; // Warning if you do not use in selected-date border: 2px solid green;  border-radius: 20%; you will not see anything
     }
     return null;
   };
@@ -86,3 +86,15 @@ function CustomCalendar() {
 }
 
 export default CustomCalendar;
+
+
+/*
+the full css code : 
+
+  .selected-date {
+  background-color: green; 
+  color: #fff;
+  border: 4px solid green; // Bordure autour des dates sélectionnées //
+  border-radius: 0%; //Arrondir la bordure (facultatif)//
+}
+*/
