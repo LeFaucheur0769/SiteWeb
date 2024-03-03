@@ -81,8 +81,15 @@ function CustomCalendar() {
       }}
       >
         {/* <center> */}
-          <button onClick={sendSelectedDatesToServer}>Envoyer les horaires</button>
-          <button onClick={loadSelectedDatesFromServer}>Recharger les horaires</button>
+          <button 
+            onClick={() => {sendSelectedDatesToServer();
+            alert('Horaires envoyés avec succès au serveur');}}>
+            Envoyer les horaires
+          </button>
+          <button 
+            onClick={() => {
+              loadSelectedDatesFromServer();
+              alert('Horaires chargeés depuis le serveur');}}>Recharger les horaires</button>
         {/* </center> */}
       </div>
     </div>
