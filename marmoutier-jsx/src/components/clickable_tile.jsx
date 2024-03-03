@@ -75,11 +75,15 @@ function CustomCalendar() {
           tileClassName={tileClassName}
         />
       </div>
-      <div>
-        <center>
+      <div
+      style={{
+        left: '65%',
+      }}
+      >
+        {/* <center> */}
           <button onClick={sendSelectedDatesToServer}>Envoyer les horaires</button>
           <button onClick={loadSelectedDatesFromServer}>Recharger les horaires</button>
-        </center>
+        {/* </center> */}
       </div>
     </div>
   );

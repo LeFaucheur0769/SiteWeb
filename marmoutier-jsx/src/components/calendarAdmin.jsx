@@ -18,9 +18,10 @@ function CalendarAdmin() {
       <div
       style={{
         position: "absolute",
-        top: "50%",
-        left: "50%",
+        top: "60%",
+        left: "58%",
         transform: "translate(-50%, -50%)",
+        scale: "125%"
       }}
     >
       <ClickableTile/>
@@ -36,7 +37,7 @@ function CalendarAdmin() {
               padding: '10px 20px',
               position: "absolute",
               top: "7.5%",
-              left: "92.5%",
+              left: "95.5%",
               transform: "translate(-50%, -50%)", }}>
             Connexion
           </button>
