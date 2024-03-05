@@ -41,7 +41,7 @@ function MyCalendar() {
   const month = (parsedDate.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
   const day = parsedDate.getDate().toString().padStart(2, '0');
   const formattedDate = `${year}-${month}-${day}`;
-  console.log(formattedDate);
+  console.log('Formatted date:', formattedDate);
   
 
   // This code defines a function called toggleView that toggles the value of showCalendar. If showCalendar is true, it will be set to false, and vice versa.
