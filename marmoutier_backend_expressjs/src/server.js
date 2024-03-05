@@ -44,21 +44,37 @@ function encrypt(users){
 }
 
 
+/**
+ * Reads a JSON file and retrieves objects with a specific date, then invokes a callback with the result.
+ *
+ * @param {string} nomFichier - The name of the file to read.
+ * @param {string} dateRecherchee - The date to search for within the objects.
+ * @param {function} callback - The callback function to invoke with the result.
+ * @return {void} 
+ */
 function recupererObjetsParDate(nomFichier, dateRecherchee, callback) {
   fs.readFile(nomFichier, 'utf8', (err, data) => {
       if (err) {
           console.error('Erreur de lecture du fichier JSON :', err);
           return callback(err, null);
       }
-
+      /*
+      The try block is used to handle potential errors that may occur during the execution of the code within it. 
+      In this case, the code attempts to parse the data variable as JSON and store the result in jsonData. 
+      If successful, it iterates through the jsonData object, searching for objects with a startTime property that includes the dateRecherchee string. 
+      When a matching object is found, it is added to the objetsTrouves array.
+      */
       try {
           const jsonData = JSON.parse(data);
           const objetsTrouves = [];
-
+          console.log("Date cherchée : ", dateRecherchee)
           for (const jour in jsonData) {
               for (const objet of jsonData[jour]) {
                   if (objet.startTime.includes(dateRecherchee)) {
                       objetsTrouves.push(objet);
+                  }
+                  else{
+                    console.log(objet.startTime);
                   }
               }
           }
@@ -193,10 +209,16 @@ app.get('/events', (req, res) => {
 // Exemple d'utilisation
 const fichierJSON = 'events.json';  // Remplacez par le nom de votre fichier JSON
 const proprietesRecherchees = req.query.dateClicked;
-console.log(proprietesRecherchees);
+console.log("proprietesRecherchees : ",proprietesRecherchees);
   // Remplacez par les propriétés que vous souhaitez rechercher"",
 
 
+/* 
+This code snippet defines a function called recupererObjetsParDate which takes three parameters: 
+dfichierJSON (presumably a JSON file), proprietesRecherchees (the properties to search for), and a callback function (err, objetsTrouves). 
+Inside the function, it checks for errors and logs them if present. If no error is found and objects are found based on the search criteria, 
+it logs and returns the objects using res.status(200).json(objetsTrouves). If no objects are found, it logs a message indicating that no matching objects were found.
+*/
 
 recupererObjetsParDate(fichierJSON, proprietesRecherchees, (err, objetsTrouves) => {
   if (err) {

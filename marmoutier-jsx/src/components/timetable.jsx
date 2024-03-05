@@ -3,12 +3,13 @@ import { useEffect, useState } from 'react';
 import Timetable from 'react-timetable-events';
 import axios from '../api/axios';
 import TimetableInput from './visual/timetable_input';
+import PropTypes from 'prop-types';
 
 
 const MyTimetable = ({ parsedData }) => {
 
   const [loading, setLoading] = useState(true);
-  const parsedDate = "Thu Nov 23 2023";
+  const parsedDate = parsedData
   const CalendarInput = new Date(parsedDate);
   console.log("parsed date : ", parsedDate);
   const year = CalendarInput.getFullYear();
@@ -52,54 +53,6 @@ const MyTimetable = ({ parsedData }) => {
   }, []);
 
 
-  // // État pour stocker les horaires sélectionnés
-  // const [selectedHours, setSelectedHours] = useState([]);
-
-  // // Fonction pour gérer la sélection d'une heure
-  // const handleHourSelect = (hour) => {
-  //   // Vous pouvez implémenter ici la logique pour gérer la sélection des heures
-  //   // Ajoutez ou supprimez l'heure du tableau selectedHours
-  //   setSelectedHours((prevSelected) =>
-  //     prevSelected.includes(hour)
-  //       ? prevSelected.filter((selected) => selected !== hour)
-  //       : [...prevSelected, hour]
-  //   );
-  // };
-
-//   return (
-//     <Timetable
-//     events={
-//               {
-//                 Day: [
-//                 {
-//                   id: 1,
-//                   name: jsonData.name,
-//                   type: jsonData.type,
-//                   startTime: new Date('2023-11-23T11:30:00'),
-//                   endTime: new Date('2023-11-23T11:45:00'),
-//                 },
-//               ],
-//              }
-//             }>
-//       {/* Boucle pour afficher les jours de la semaine */}
-//       {['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'].map((day) => (
-//         <Timetable.TimetableRow key={day} name={day}>
-//           {/* Boucle pour afficher les heures et les cases à cocher */}
-//           {Array.from({ length: 24 }, (_, i) => (
-//             <div key={i}>
-//               <input
-//                 type="checkbox"
-//                 checked={selectedHours.includes(i)}
-//                 onChange={() => handleHourSelect(i)}
-//               />
-//             </div>
-//           ))}
-//         </Timetable.TimetableRow>
-//       ))}
-//     </Timetable>
-//   );
-// };
-
   return (
     <div>
       <h1>Calendrier des événements</h1>
@@ -137,5 +90,9 @@ const MyTimetable = ({ parsedData }) => {
     </div>
   );
 }
+
+MyTimetable.propTypes = {
+  parsedData: PropTypes.any.isRequired,
+};
 
   export default MyTimetable;
