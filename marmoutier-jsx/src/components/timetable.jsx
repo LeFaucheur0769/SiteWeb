@@ -47,6 +47,10 @@ const MyTimetable = ({ parsedData }) => {
         setLoading(false);
       })
       .catch((error) => {
+        if(error = "404"){
+          console.log("error 404 timetable not found")
+          setLoading(true);
+        }
         console.error('Error while requesting events from the backend server:', error);
         setLoading(false);
       });
@@ -56,40 +60,39 @@ const MyTimetable = ({ parsedData }) => {
   return (
     <div>
       <h1>Calendrier des événements</h1>
-      {loading ? (
-        <p>Chargement...</p>
-      ) : (
+      {!loading && Object.keys(jsonData).length > 0 ? (
         <div>
-          <Timetable 
-          events={
-            {
+          <Timetable
+            events={{
               Day: [
-              {
-                id: 1,
-                name: jsonData.name,
-                type: jsonData.type,
-                startTime: new Date(jsonData.startTime),
-                endTime: new Date(jsonData.endTime),
-              },
-            ],
-          }
-          }
-          style={{ height: '500px' }}
-          onClick={(event) => alert(event)}
-        />
-        {/* Utiliser une checkbox pour les horaires a selectionner */}
-        {/* <div  style={{display:'flex'}}>
-          <text style={{marginRight : "5px"}}> Début : </text>
-          <input type="time" name="timetable" pattern="(0[1-9]|1[0-2])h([0-5][0-9])m-(0[1-9]|1[0-2])h([0-5][0-9])m" required style={{marginRight : "100px"}}/>
-          <text style={{marginRight : "5px"}}> Fin : </text>
-          <input type="time" name="timetable" pattern="(0[1-9]|1[0-2])h([0-5][0-9])m-(0[1-9]|1[0-2])h([0-5][0-9])m" required />
-        </div> */}
-        {/* <TimetableInput></TimetableInput> */}
-      </div>
+                {
+                  id: 1,
+                  name: jsonData.name,
+                  type: jsonData.type,
+                  startTime: new Date(jsonData.startTime),
+                  endTime: new Date(jsonData.endTime),
+                },
+              ],
+            }}
+            style={{ height: '500px' }}
+            onClick={(event) => alert(event)}
+          />
+          {/* Utiliser une checkbox pour les horaires a selectionner */}
+          {/* <div  style={{display:'flex'}}>
+            <text style={{marginRight : "5px"}}> Début : </text>
+            <input type="time" name="timetable" pattern="(0[1-9]|1[0-2])h([0-5][0-9])m-(0[1-9]|1[0-2])h([0-5][0-9])m" required style={{marginRight : "100px"}}/>
+            <text style={{marginRight : "5px"}}> Fin : </text>
+            <input type="time" name="timetable" pattern="(0[1-9]|1[0-2])h([0-5][0-9])m-(0[1-9]|1[0-2])h([0-5][0-9])m" required />
+          </div> */}
+          {/* <TimetableInput></TimetableInput> */}
+        </div>
+      ) : (
+        <p>{loading ? 'Chargement...' : 'Aucun événement trouvé pour cette date.'}</p>
       )}
     </div>
   );
 }
+
 
 MyTimetable.propTypes = {
   parsedData: PropTypes.any.isRequired,
