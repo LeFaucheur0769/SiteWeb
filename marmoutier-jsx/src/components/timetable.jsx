@@ -84,7 +84,7 @@ const MyTimetable = ({ parsedData }) => {
           <text style={{marginRight : "5px"}}> Fin : </text>
           <input type="time" name="timetable" pattern="(0[1-9]|1[0-2])h([0-5][0-9])m-(0[1-9]|1[0-2])h([0-5][0-9])m" required />
         </div> */}
-        <TimetableInput></TimetableInput>
+        {/* <TimetableInput></TimetableInput> */}
       </div>
       )}
     </div>

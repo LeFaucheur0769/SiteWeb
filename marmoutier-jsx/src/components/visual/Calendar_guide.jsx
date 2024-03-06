@@ -1,7 +1,7 @@
 import { useState } from 'react';
 // import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import MyTimetable from '../timetable';
+import MyTimetable_guide from './timetable_guide';
 import MyCalendar from './Calendar';
 
 // This code defines a function called Calendar_Guide that returns a React component.
@@ -70,7 +70,7 @@ function Calendar_Guide() {
         <div>
           {/* Pass the formattedDate as a prop to MyTimetable */}
           
-          <MyTimetable parsedDate={parsedDate} />
+          <MyTimetable_guide parsedDate={parsedDate} />
           {/* <button onClick={toggleView} >Retour au Calendrier</button> */}
         </div>
       )}

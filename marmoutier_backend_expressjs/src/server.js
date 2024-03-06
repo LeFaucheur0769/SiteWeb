@@ -228,6 +228,7 @@ recupererObjetsParDate(fichierJSON, proprietesRecherchees, (err, objetsTrouves) 
       res.status(200).json(objetsTrouves);
   } else {
       console.log('Aucun objet correspondant à la date recherchée n\'a été trouvé.');
+      res.status(404).send('Aucun objet correspondant à la date recherchée n\'a été');
   }
 });
 
