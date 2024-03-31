@@ -2,7 +2,7 @@
 
 import Marmoutier_logo from "./visual/Marmoutier_logo"
 import 'react-calendar/dist/Calendar.css';
-import ClickableTile from './clickable_tile';
+import ClickableTile from './visual/Admins/clickable_tile';
 import { Link } from 'react-router-dom';
 
 

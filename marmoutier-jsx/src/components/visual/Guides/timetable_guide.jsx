@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 // import Timetable from 'react-timetable-events';
 import Timetable from 'react-timetable-events';
-import axios from '../../api/axios';
+import axios from '../../../api/axios';
 import TimetableInput from './timetable_input';
 import PropTypes from 'prop-types';
 

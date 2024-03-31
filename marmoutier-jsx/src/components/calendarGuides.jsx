@@ -1,4 +1,4 @@
-import Calendar_Guide from "./visual/Calendar_guide"
+import Calendar_Guide from "./visual/Guides/Calendar_guide"
 import { Link } from "react-router-dom"
 import Marmoutier_logo from "./visual/Marmoutier_logo"
 
