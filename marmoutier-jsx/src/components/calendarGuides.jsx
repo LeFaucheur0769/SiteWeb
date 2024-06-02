@@ -39,7 +39,7 @@ function CalendarGuides(){
                             padding: '10px 20px',
                             position: "absolute",
                             top: "7.5%",
-                            left: "92.5%",
+                            left: "90.5%",
                             transform: "translate(-50%, -50%)", }}>
                             Connexion
                         </button>

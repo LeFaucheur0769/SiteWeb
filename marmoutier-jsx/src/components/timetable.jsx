@@ -75,7 +75,7 @@ const MyTimetable = ({ parsedData }) => {
               ],
             }}
             style={{ height: '500px' }}
-            onClick={(event) => alert(event)}
+            // onClick={(event) => alert(event)}
           />
           {/* Utiliser une checkbox pour les horaires a selectionner */}
           {/* <div  style={{display:'flex'}}>
@@ -87,9 +87,24 @@ const MyTimetable = ({ parsedData }) => {
           {/* <TimetableInput></TimetableInput> */}
         </div>
       ) : (
-        <p>{loading ? 'Chargement...' : 'Aucun événement trouvé pour cette date.'}</p>
+        // <p>{loading ? 'Chargement...' : 'Aucun événement trouvé pour cette date.'}
+        <p>{loading ? 'Chargement...' : 'Aucun événement trouvé pour cette date.'}
+        <Timetable
+          events={{
+            Day: [
+              {
+                id: 1,
+                name: 'No Event',
+                type: 'No Event',
+                startTime: new Date(),
+                endTime: new Date(),
+              }
+            ],
+          }}
+        ></Timetable>
+        </p>
       )}
-    </div>
+  </div>
   );
 }
 

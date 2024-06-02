@@ -228,7 +228,32 @@ recupererObjetsParDate(fichierJSON, proprietesRecherchees, (err, objetsTrouves) 
       res.status(200).json(objetsTrouves);
   } else {
       console.log('Aucun objet correspondant à la date recherchée n\'a été trouvé.');
-      res.status(404).send('Aucun objet correspondant à la date recherchée n\'a été');
+      // res.status(200).send('Aucun objet correspondant à la date recherchée n\'a été');
+      fs.readFile(fichierJSON, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Erreur de lecture du fichier JSON :', err);
+        }
+        try {
+          const jsonData = JSON.parse(data);
+          const objetsTrouves = [];
+          console.log("Date cherchée : ", null)
+          for (const jour in jsonData) {
+              for (const objet of jsonData[jour]) {
+                  if (objet.startTime.includes(null)) {
+                      objetsTrouves.push(objet);
+                  }
+                  else{
+                    console.log("Pas de date trouvée, renvoyer une valeur null");
+                  }
+              }
+          }
+
+          return callback(null, objetsTrouves);
+      } catch (parseError) {
+          console.error('Erreur d\'analyse JSON :', parseError);
+      }
+      });
+      res.status(200).json(objetsTrouves);
   }
 });
 
